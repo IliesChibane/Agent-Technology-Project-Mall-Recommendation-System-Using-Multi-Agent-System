@@ -1,0 +1,223 @@
+{
+    "title":"Vehicles",
+    "but": "Vehicle",
+    "facts":{
+       "Number_of_wheels":[
+          "2",
+          "3",
+          "4"
+       ],
+       "Number_of_doors":[
+          "2",
+          "3",
+          "4"
+       ],
+       "Motor": [
+          "yes",
+          "no"
+       ],
+       "Size": [
+          "small",
+          "medium",
+          "large"
+       ],
+       "Vehicule_Type": [
+          "automobile",
+          "cycle"
+       ]
+    },
+    "rules":{
+       "Bicycle":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "cycle"
+             },
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "==",
+                "value_operator": "2"
+             },
+             {
+                "type_operator": "Motor",
+                "operation": "==",
+                "value_operator": "no"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "Bicycle"
+          }
+       },
+       "Tricycle":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "cycle"
+             },
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "==",
+                "value_operator": "3"
+             },
+             {
+                "type_operator": "Motor",
+                "operation": "==",
+                "value_operator": "no"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "Tricycle"
+          }
+       },
+       "Motorcycle":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "cycle"
+             },
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "==",
+                "value_operator": "2"
+             },
+             {
+                "type_operator": "Motor",
+                "operation": "==",
+                "value_operator": "yes"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "Bicycle"
+          }
+       },
+       "SportCar":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "automobile"
+             },
+             {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "small"
+             },
+             {
+                "type_operator": "Number_of_doors",
+                "operation": "==",
+                "value_operator": "2"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "SportCar"
+          }
+       },
+       "Sedan":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "automobile"
+             },
+             {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "medium"
+             },
+             {
+                "type_operator": "Number_of_doors",
+                "operation": "==",
+                "value_operator": "4"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "Sedan"
+          }
+       },
+       "MiniVan":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "automobile"
+             },
+             {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "medium"
+             },
+             {
+                "type_operator": "Number_of_doors",
+                "operation": "==",
+                "value_operator": "3"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "MiniVan"
+          }
+       },
+       "SUV":{
+          "AND": [
+             {
+                "type_operator": "Vehicule_Type",
+                "operation": "==",
+                "value_operator": "automobile"
+             },
+             {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "large"
+             },
+             {
+                "type_operator": "Number_of_doors",
+                "operation": "==",
+                "value_operator": "4"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicle",
+             "result": "Sport_Utility_Vehicle"
+          }
+       },
+       "Cycle":{
+          "AND": [
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "<",
+                "value_operator": "4"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicule_Type",
+             "result": "cycle"
+          }
+       },
+       "Automobile":{
+          "AND": [
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "==",
+                "value_operator": "4"
+             },
+             {
+                "type_operator": "Motor",
+                "operation": "==",
+                "value_operator": "yes"
+             }
+          ],
+          "THEN": {
+             "type_result": "Vehicule_Type",
+             "result": "automobile"
+          }
+       }
+    }
+}
