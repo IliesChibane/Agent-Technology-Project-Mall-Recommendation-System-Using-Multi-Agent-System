@@ -1,0 +1,381 @@
+{
+    "title": "Produits",
+    "but": "produit_a_acheter",
+    "facts": {
+        "Type": [
+            "Surveillance",
+            "Mobile",
+            "Computers",
+            "Tablette",
+            "Electronics"
+        ],
+        "Quantité": [
+            "2",
+            "9",
+            "10",
+            "3",
+            "31",
+            "11"
+        ],
+        "Prix": [
+            "35000",
+            "9000",
+            "5000"
+        ],
+        "Couleur": [
+            "Rose",
+            "Gris",
+            "Vert",
+            "Blanc"
+        ],
+        "Promotion": [
+            "3%",
+            "7%",
+            "15%",
+            "33%"
+        ],
+        "Marque": [
+            "Logitech",
+            "Apple"
+        ],
+        "Etat": [
+            "Neuf/Sous Emballage",
+            "Usagé"
+        ]
+
+    },
+    "rules": {
+        "Vehicule Camera": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Surveillance"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "2"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "9000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Vehicule Camera"
+            }
+        },
+        "GPS Tracker": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Surveillance"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "10"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "9000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "GPS Tracker"
+            }
+        },
+        "Led": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Mobile"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "2"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "35000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Led"
+            }
+        },
+        "PC portable": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "3"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "9000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "PC portable"
+            }
+        },
+        "Transistor": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Electronics"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "3"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "9000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Transistor"
+            }
+        },
+        "TV Screen": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "7%"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Tablette"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "2"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "9000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "TV Screen"
+            }
+        },
+        "TV": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "7%"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Tablette"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "2"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "35000"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "TV"
+            }
+        },
+        "Oculus": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "7%"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Tablette"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "31"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Oculus"
+            }
+        },
+        "Airpods": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "33%"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "9"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Airpods"
+            }
+        },
+        "Flash Disque": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "15%"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "9"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Flash Disque"
+            }
+        },
+        "HDD": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "9"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "HDD"
+            }
+        },
+        "CPU": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                },
+                {
+                    "type_operator": "Quantité",
+                    "operation": "==",
+                    "value_operator": "11"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Gris"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "CPU"
+            }
+        },
+        "Blanc": {
+            "AND": [{
+                "type_operator": "Quantité",
+                "operation": "==",
+                "value_operator": "3"
+            }],
+            "THEN": {
+                "type_result": "Couleur",
+                "result": "Blanc"
+            }
+        },
+        "Computers": {
+            "AND": [{
+                "type_operator": "Couleur",
+                "operation": "==",
+                "value_operator": "Gris"
+            }],
+            "THEN": {
+                "type_result": "Type",
+                "result": "Computers"
+            }
+        },
+        "Mobile": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "3%"
+                },
+                {
+                    "type_operator": "Periode",
+                    "operation": "==",
+                    "value_operator": "Logitech"
+                }
+            ],
+            "THEN": {
+                "type_result": "Type",
+                "result": "Mobile"
+            }
+        },
+        "Surveillance": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "3%"
+                },
+                {
+                    "type_operator": "Periode",
+                    "operation": "==",
+                    "value_operator": "Apple"
+                }
+            ],
+            "THEN": {
+                "type_result": "Type",
+                "result": "Mobile"
+            }
+        },
+        "7%": {
+            "AND": [{
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "3%"
+                },
+                {
+                    "type_operator": "Endroit_pour_se_detendre",
+                    "operation": "==",
+                    "value_operator": "Neuf/Sous Emballage"
+                }
+            ],
+            "THEN": {
+                "type_result": "Promotion",
+                "result": "7%"
+            }
+        }
+    }
+}

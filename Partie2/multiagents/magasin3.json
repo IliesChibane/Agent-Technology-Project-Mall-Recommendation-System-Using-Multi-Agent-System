@@ -3,15 +3,15 @@
     "but": "produit_a_acheter",
     "facts": {
         "Type": [
-            "Audio",
+            "Surveillance",
             "Mobile",
             "Computers",
-            "Video",
+            "Tablette",
             "Electronics"
         ],
         "Quantité": [
-            "6",
-            "5",
+            "2",
+            "9",
             "10",
             "3",
             "31",
@@ -26,16 +26,16 @@
             "Rose",
             "Gris",
             "Vert",
-            "Noir"
+            "Blanc"
         ],
         "Promotion": [
-            "5%",
-            "10%",
+            "3%",
+            "7%",
             "15%",
-            "20%"
+            "33%"
         ],
         "Marque": [
-            "Samsung",
+            "Logitech",
             "Apple"
         ],
         "Etat": [
@@ -45,16 +45,16 @@
 
     },
     "rules": {
-        "Headphones": {
+        "Vehicule Camera": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
-                    "value_operator": "Audio"
+                    "value_operator": "Surveillance"
                 },
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "6"
+                    "value_operator": "2"
                 },
                 {
                     "type_operator": "Prix",
@@ -63,15 +63,15 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "Headphones"
+                "type_result": "produit_a_acheter",
+                "result": "Vehicule Camera"
             }
         },
-        "Microphone": {
+        "GPS Tracker": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
-                    "value_operator": "Audio"
+                    "value_operator": "Surveillance"
                 },
                 {
                     "type_operator": "Quantité",
@@ -85,11 +85,11 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "Microphone"
+                "type_result": "produit_a_acheter",
+                "result": "GPS Tracker"
             }
         },
-        "Afficheur": {
+        "Led": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -98,7 +98,7 @@
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "6"
+                    "value_operator": "2"
                 },
                 {
                     "type_operator": "Prix",
@@ -107,8 +107,8 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "Afficheur"
+                "type_result": "produit_a_acheter",
+                "result": "Led"
             }
         },
         "PC portable": {
@@ -129,11 +129,11 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
+                "type_result": "produit_a_acheter",
                 "result": "PC portable"
             }
         },
-        "Semiconducteur": {
+        "Transistor": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -151,25 +151,25 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "Semiconducteur"
+                "type_result": "produit_a_acheter",
+                "result": "Transistor"
             }
         },
         "TV Screen": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "10%"
+                    "value_operator": "7%"
                 },
                 {
                     "type_operator": "Type",
                     "operation": "==",
-                    "value_operator": "Video"
+                    "value_operator": "Tablette"
                 },
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "6"
+                    "value_operator": "2"
                 },
                 {
                     "type_operator": "Prix",
@@ -178,7 +178,7 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
+                "type_result": "produit_a_acheter",
                 "result": "TV Screen"
             }
         },
@@ -186,17 +186,17 @@
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "10%"
+                    "value_operator": "7%"
                 },
                 {
                     "type_operator": "Type",
                     "operation": "==",
-                    "value_operator": "Video"
+                    "value_operator": "Tablette"
                 },
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "6"
+                    "value_operator": "2"
                 },
                 {
                     "type_operator": "Prix",
@@ -205,7 +205,7 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
+                "type_result": "produit_a_acheter",
                 "result": "TV"
             }
         },
@@ -213,12 +213,12 @@
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "10%"
+                    "value_operator": "7%"
                 },
                 {
                     "type_operator": "Type",
                     "operation": "==",
-                    "value_operator": "Video"
+                    "value_operator": "Tablette"
                 },
                 {
                     "type_operator": "Quantité",
@@ -227,28 +227,28 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
+                "type_result": "produit_a_acheter",
                 "result": "Oculus"
             }
         },
-        "20%s de Kefrida": {
+        "Airpods": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "20%"
+                    "value_operator": "33%"
                 },
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "5"
+                    "value_operator": "9"
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "20%s de Kefrida"
+                "type_result": "produit_a_acheter",
+                "result": "Airpods"
             }
         },
-        "Grotte féérique": {
+        "Flash Disque": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -257,15 +257,15 @@
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "5"
+                    "value_operator": "9"
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "Grotte féérique"
+                "type_result": "produit_a_acheter",
+                "result": "Flash Disque"
             }
         },
-        "RAM": {
+        "HDD": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -274,15 +274,15 @@
                 {
                     "type_operator": "Quantité",
                     "operation": "==",
-                    "value_operator": "5"
+                    "value_operator": "9"
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "RAM"
+                "type_result": "produit_a_acheter",
+                "result": "HDD"
             }
         },
-        "SSD": {
+        "CPU": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -300,11 +300,11 @@
                 }
             ],
             "THEN": {
-                "type_result": "lieu_a_visiter",
-                "result": "SSD"
+                "type_result": "produit_a_acheter",
+                "result": "CPU"
             }
         },
-        "Noir": {
+        "Blanc": {
             "AND": [{
                 "type_operator": "Quantité",
                 "operation": "==",
@@ -312,7 +312,7 @@
             }],
             "THEN": {
                 "type_result": "Couleur",
-                "result": "Noir"
+                "result": "Blanc"
             }
         },
         "Computers": {
@@ -330,12 +330,12 @@
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "5%"
+                    "value_operator": "3%"
                 },
                 {
                     "type_operator": "Periode",
                     "operation": "==",
-                    "value_operator": "Samsung"
+                    "value_operator": "Logitech"
                 }
             ],
             "THEN": {
@@ -343,11 +343,11 @@
                 "result": "Mobile"
             }
         },
-        "Audio": {
+        "Surveillance": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "5%"
+                    "value_operator": "3%"
                 },
                 {
                     "type_operator": "Periode",
@@ -360,11 +360,11 @@
                 "result": "Mobile"
             }
         },
-        "10%": {
+        "7%": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
-                    "value_operator": "5%"
+                    "value_operator": "3%"
                 },
                 {
                     "type_operator": "Endroit_pour_se_detendre",
@@ -374,7 +374,7 @@
             ],
             "THEN": {
                 "type_result": "Promotion",
-                "result": "10%"
+                "result": "7%"
             }
         }
     }
