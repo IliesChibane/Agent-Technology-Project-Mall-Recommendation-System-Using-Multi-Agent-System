@@ -155,7 +155,7 @@
                 "result": "Transistor"
             }
         },
-        "TV Screen": {
+        "Screen Reflector": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -179,10 +179,10 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "TV Screen"
+                "result": "Screen Reflector"
             }
         },
-        "TV": {
+        "Antenna": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -206,10 +206,10 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "TV"
+                "result": "Antenna"
             }
         },
-        "Oculus": {
+        "Battery": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -228,7 +228,7 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "Oculus"
+                "result": "Battery"
             }
         },
         "Airpods": {

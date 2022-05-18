@@ -133,7 +133,7 @@
                 "result": "PC portable"
             }
         },
-        "Transistor": {
+        "PCB": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -152,10 +152,10 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "Transistor"
+                "result": "PCB"
             }
         },
-        "TV Screen": {
+        "Display": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -179,10 +179,10 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "TV Screen"
+                "result": "Display"
             }
         },
-        "TV": {
+        "Screen": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -206,10 +206,10 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "TV"
+                "result": "Screen"
             }
         },
-        "Oculus": {
+        "Stylus": {
             "AND": [{
                     "type_operator": "Promotion",
                     "operation": "==",
@@ -228,7 +228,7 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "Oculus"
+                "result": "Stylus"
             }
         },
         "Airpods": {
@@ -282,7 +282,7 @@
                 "result": "HDD"
             }
         },
-        "CPU": {
+        "Boitier PC": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -301,7 +301,7 @@
             ],
             "THEN": {
                 "type_result": "produit_a_acheter",
-                "result": "CPU"
+                "result": "Boitier PC"
             }
         },
         "Blanc": {
