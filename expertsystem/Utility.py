@@ -44,7 +44,7 @@ def JsonToRules(json_file):
 
 def Reason(json_file, facts):
     but = json_file['but']
-    is_static = False;
+    is_static = False
     rules = JsonToRules(json_file)
     results = []
     
