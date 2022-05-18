@@ -367,7 +367,7 @@
                     "value_operator": "3%"
                 },
                 {
-                    "type_operator": "Endroit_pour_se_detendre",
+                    "type_operator": "Produit_a_echanger",
                     "operation": "==",
                     "value_operator": "Neuf/Sous Emballage"
                 }
