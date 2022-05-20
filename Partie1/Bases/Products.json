@@ -1,0 +1,372 @@
+{
+    "title": "Produit",
+    "but": "produit_a_acheter",
+    "facts": {
+        "Category": [
+            "Audio",
+            "Mobile",
+            "Computers",
+            "Video",
+            "Electronics"
+        ],
+        "Type": [
+            "Device",
+            "Component"
+        ],
+        "Size": [
+            "Small",
+            "Medium",
+            "Big"
+        ],
+        "Function": [
+            "Receiver",
+            "Sender"
+        ],
+        "Portable": [
+            "Yes",
+            "No"
+        ]
+    },
+    "rules": {
+        "Headphones": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Audio"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Receiver"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Headphones"
+            }
+        },
+        "Microphone": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Audio"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Sender"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Microphone"
+            }
+        },
+        "Afficheur": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Video"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Component"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Receiver"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Afficheur"
+            }
+        },
+        "Laptop": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                },
+                {
+                    "type_operator": "Portable",
+                    "operation": "==",
+                    "value_operator": "Yes"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Laptop"
+            }
+        },
+        "Semiconducteur": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Electronics"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Component"
+                },
+                {
+                    "type_operator": "Size",
+                    "operation": "==",
+                    "value_operator": "Small"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Semiconducteur"
+            }
+        },
+        "TV Screen": {
+            "AND": [{
+                "type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Video"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Component"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Receiver"
+                },
+                {
+                    "type_operator": "Portable",
+                    "operation": "==",
+                    "value_operator": "No"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "TV Screen"
+            }
+        },
+        "TV": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                },
+                {
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Video"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Receiver"
+                },
+                {
+                    "type_operator": "Portable",
+                    "operation": "==",
+                    "value_operator": "No"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "TV"
+            }
+        },
+        "Oculus": {
+            "AND": [{
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Receiver"
+                },
+                {
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Video"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Oculus"
+            }
+        },
+        "desktop computer": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Device"
+                },
+                {
+                    "type_operator": "Portable",
+                    "operation": "==",
+                    "value_operator": "No"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "desktop computer"
+            }
+        },
+        "RAM": {
+            "AND": [{
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Electronics"
+                },
+                {
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Component"
+                },
+                {
+                    "type_operator": "Function",
+                    "operation": "==",
+                    "value_operator": "Sender"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "RAM"
+            }
+        },
+        "SSD": {
+            "AND": [{
+                "type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Electronics"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Component"
+                },
+                {
+                "type_operator": "Function",
+                "operation": "==",
+                "value_operator": "Receiver"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "SSD"
+            }
+        },
+        "Smartphone": {
+            "AND": [{"type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Mobile"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Device"
+                },
+                {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "Small"
+                }
+            ],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Mobile"
+            }
+        },
+        "Tablet": {
+            "AND": [{"type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Mobile"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Device"
+                },
+                {
+                "type_operator": "Size",
+                "operation": "==",
+                "value_operator": "Medium"
+                }],
+            "THEN": {
+                "type_result": "produit_a_acheter",
+                "result": "Tablet"
+            }
+        },
+        "Yes": {
+            "AND": [{
+                "type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Audio"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Device"
+                }
+            ],
+            "THEN": {
+                "type_result": "Portable",
+                "result": "Yes"
+            }
+        },
+        "Sender": {
+            "AND": [
+                {
+                    "type_operator": "Category",
+                    "operation": "==",
+                    "value_operator": "Computers"
+                }
+            ],
+            "THEN": {
+                "type_result": "Function",
+                "result": "Sender"
+            }
+        },
+        "Small": {
+            "AND": [{
+                "type_operator": "Category",
+                "operation": "==",
+                "value_operator": "Electronics"
+                },
+                {
+                "type_operator": "Type",
+                "operation": "==",
+                "value_operator": "Component"
+                }
+            ],
+            "THEN": {
+                "type_result": "Size",
+                "result": "Small"
+            }
+        }
+    }
+}

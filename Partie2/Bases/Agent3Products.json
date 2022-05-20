@@ -1,0 +1,439 @@
+{
+    "title": "Shop3_Products_List",
+    "but": "product",
+    "facts": {
+        "Type": [
+            "Headphones",
+            "Microphone",
+            "Afficheur",
+            "Semiconducteur",
+            "TV Screen",
+            "TV",
+            "Oculus",
+            "SSD",
+            "RAM"
+        ],
+        "Quantity": [
+            "6",
+            "5",
+            "10",
+            "3",
+            "31",
+            "11"
+        ],
+        "Prix": [
+            "15000",
+            "500000",
+            "10000",
+            "2000",
+            "3500",
+            "200000"
+        ],
+        "Couleur": [
+            "Pink",
+            "Grey",
+            "Green",
+            "Black",
+            "Blue"
+        ],
+        "Promotion": [
+            "5%",
+            "10%",
+            "15%",
+            "20%",
+            "None"
+        ],
+        "Marque": [
+            "Samsung",
+            "LG",
+            "Sony",
+            "JBL",
+            "Facebook"
+        ],
+        "Etat": [
+            "New",
+            "Usagy"
+        ]
+
+    },
+    "rules": {
+        "JBL 151": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Headphones"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "6"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "20000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Noir"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "None"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "JBL"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "Iphone 12"
+            }
+        },
+        "JBL Wireless Microphone": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Microphone"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "3"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "20000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Black"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "if end of the week then 20%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "JBL"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "JBL Wireless Microphone"
+            }
+        },
+        "Tv LG": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "TV"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "11"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "15000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Black"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "None"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "LG"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "TV LG"
+            }
+        },
+        "TV Screen LG": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "TV Screen"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "10"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "5000000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Black"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "==",
+                    "value_operator": "if Quantity >= 3 then 15%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "LG"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "Alienware Aurora"
+            }
+        },
+        "Delta X": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Afficheur"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "7"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "2000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Black"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "if Quantity >= 2 then 15%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "Usagy"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "HP"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "Delta X"
+            }
+        },
+        "Atel 154": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Semiconducteur"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "31"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "1500"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Grey"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "None"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "Sony"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "Atel 154"
+            }
+        },
+        "OculusRift": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "Oculus"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "31"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "150000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Green"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "15%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "Facebook"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "OculusRift"
+            }
+        },
+        "RAM2000": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "RAM"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "31"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "10000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Black"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "if Quantity >= 15 then 5%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "Sony"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "RAM2000"
+            }
+        },
+        "SSD3000": {
+            "AND": [{
+                    "type_operator": "Type",
+                    "operation": "==",
+                    "value_operator": "SSD"
+                },
+                {
+                    "type_operator": "Quantity",
+                    "operation": "<=",
+                    "value_operator": "31"
+                },
+                {
+                    "type_operator": "Prix",
+                    "operation": "==",
+                    "value_operator": "150000"
+                },
+                {
+                    "type_operator": "Couleur",
+                    "operation": "==",
+                    "value_operator": "Grey"
+                },
+                {
+                    "type_operator": "Promotion",
+                    "operation": "%",
+                    "value_operator": "if Quantity >= 4 then 15%"
+                },
+                {
+                    "type_operator": "Etat",
+                    "operation": "==",
+                    "value_operator": "New"
+                },
+                {
+                    "type_operator": "Marque",
+                    "operation": "==",
+                    "value_operator": "Sony"
+                }
+            ],
+            "THEN": {
+                "type_result": "product",
+                "result": "SSD3000"
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@
 
             <v-col cols="6">
                 <div>
-                    <h2 align="center">List of tourism facts</h2>
+                    <h2 align="center">List of products facts</h2>
                     <div v-for="(value1, key1) in TR" :key="key1"> 
                         <h3>
                             {{key1}} :
@@ -82,7 +82,7 @@ export default {
         async getTR() {
             try {
                 const response = await axios.get(
-                    "http://localhost:5000/api/TourismRules"
+                    "http://localhost:5000/api/productsRules"
                 );
                 this.TR = response.data;
             } catch (error) {

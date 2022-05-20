@@ -4,6 +4,19 @@
     <v-row class="mt-5">
         <v-col cols="6">
             <v-combobox 
+                label="Category" 
+                dense 
+                filled 
+                outlined 
+                small-chips 
+                solo
+                :items="Category_items"
+                :rules="rules"
+                v-model="places.Category"
+            ></v-combobox>
+        </v-col>
+        <v-col cols="6">
+            <v-combobox 
                 label="Type" 
                 dense 
                 filled 
@@ -15,46 +28,33 @@
                 v-model="places.Type"
             ></v-combobox>
         </v-col>
-        <v-col cols="6">
-            <v-combobox 
-                label="Localisation" 
-                dense 
-                filled 
-                outlined 
-                small-chips 
-                solo
-                :items="Localisation_items"
-                :rules="rules"
-                v-model="places.Localisation"
-            ></v-combobox>
-        </v-col>
     </v-row>
 
     <v-row class="mt-5">
         <v-col cols="6">
             <v-combobox 
-                label="Price" 
+                label="Size" 
                 dense 
                 filled 
                 outlined 
                 small-chips 
                 solo
-                :items="Prix_items"
+                :items="Size_items"
                 :rules="rules"
-                v-model="places.Prix"
+                v-model="places.Size"
             ></v-combobox>
         </v-col>
         <v-col cols="6">
             <v-combobox 
-                label="Place to relax" 
+                label="Function" 
                 dense 
                 filled 
                 outlined 
                 small-chips 
                 solo
-                :items="Endroit_pour_se_detendre_items"
+                :items="Function_items"
                 :rules="rules"
-                v-model="places.Endroit_pour_se_detendre"
+                v-model="places.Function"
             ></v-combobox>
         </v-col>
     </v-row>
@@ -62,44 +62,17 @@
     <v-row class="mt-5">
         <v-col cols="4">
             <v-combobox 
-                label="Climat" 
+                label="Portable" 
                 dense 
                 filled 
                 outlined 
                 small-chips 
                 solo
-                :items="Climat_items"
+                :items="Portable_items"
                 :rules="rules"
-                v-model="places.Climat"
+                v-model="places.Portable"
             ></v-combobox>
         </v-col>
-        <v-col cols="4">
-            <v-combobox 
-                label="Type of place" 
-                dense 
-                filled 
-                outlined 
-                small-chips 
-                solo
-                :items="Type_lieu_items"
-                :rules="rules"
-                v-model="places.Type_lieu"
-            ></v-combobox>
-        </v-col>
-        <v-col cols="4">
-            <v-combobox 
-                label="Construction period" 
-                dense 
-                filled 
-                outlined 
-                small-chips 
-                solo
-                :items="Periode_items"
-                :rules="rules"
-                v-model="places.Periode"
-            ></v-combobox>
-        </v-col>
-    </v-row>
 
     <v-row class="text-center">
         <v-col>
@@ -133,38 +106,32 @@ export default {
         return {
             rules: [(value) => !!value || "This field is required"],
             results:[],
-            Type_items: ["Lieu Historique","Lieu Culturel","Hauteurs et montagnes","Lieu Aquatique","Parc National","Doesn't matter"],
-            Localisation_items: ["Alger","Bejaia","Tipaza","Sahara","Oran","Blida","Doesn't matter"],
-            Prix_items: ["Payant","Gratuit","Visite Guidée Payante","Doesn't matter"],
-            Climat_items: ["Regulier","Froid","Humide","Chaud","Doesn't matter"],
-            Type_lieu_items: ["Construction humaine","Plage","Grotte Naturelle","Cascade","Doesn't matter"],
-            Periode_items: ["Moin de cinquante ans","Plus de cinquante ans","Doesn't matter"],
-            Endroit_pour_se_detendre_items: ["True","False","Doesn't matter"],
+            Category_items: ["Audio","Mobile","Computers","Video","Electronic","Doesn't matter"],
+            Type_items: ["Device","Component","Doesn't matter"],
+            Size_items: ["Small","Medium","Big","Doesn't matter"],
+            Function_items: ["Receiver","Sender","Doesn't matter"],
+            Portable_items: ["Yes","No","Doesn't matter"],
             places: {
-                Type: "",
+                Category: "",
                 Localisation: "",
-                Prix: "",
-                Climat: "",
-                Type_lieu: "",
-                Periode: "",
-                Endroit_pour_se_detendre: ""
+                Size: "",
+                Function: "",
+                Portable: ""
             },
         };
     },
     methods: {
-        // fetching places
+        // fetching products
         async getData() {
             try {
                 const response = await axios.post(
-                    "http://localhost:5000/api/tourism",
+                    "http://localhost:5000/api/products",
                     {
-                        Type: this.places.Type,
+                        Category: this.places.Category,
                         Localisation: this.places.Localisation,
-                        Prix: this.places.Prix,
-                        Climat: this.places.Climat,
-                        Type_lieu: this.places.Type_lieu,
-                        Periode: this.places.Periode,
-                        Endroit_pour_se_detendre: this.places.Endroit_pour_se_detendre
+                        Size: this.places.Size,
+                        Function: this.places.Function,
+                        Portable: this.places.Portable,
                     }
                 );
                 this.results = response.data;

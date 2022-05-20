@@ -20,7 +20,7 @@
 
             <v-col cols="6">
                 <div>
-                    <h2>List of tourism facts</h2>
+                    <h2>List of products facts</h2>
                     <div v-for="facts in TF" :key="facts"> 
                     <div v-for="(value, key) in facts" :key="key" class="mt-5">
                         <h3>
@@ -66,7 +66,7 @@ export default {
         async getTF() {
             try {
                 const response = await axios.get(
-                    "http://localhost:5000/api/TourismFacts"
+                    "http://localhost:5000/api/productsFacts"
                 );
                 this.TF = response.data;
             } catch (error) {

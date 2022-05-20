@@ -17,10 +17,14 @@ class Condition:
                 return fact <= self.operation_value
             elif(self.operation == ">="):
                 return fact >= self.operation_value
+            elif(self.operation == "%"):
+                return fact in self.operation_value
             else:
                 return "Doesn't matter"
         else:
             return True
+    def to_string(self):
+        return self.operator_type + " " + self.operation + " " + self.operation_value
 
 class Rule:
     def __init__(self, rule_name, conditions, type_result, result):
@@ -30,7 +34,7 @@ class Rule:
         self.result = result
         self.ignore = False
 
-def JsonToRules(json_file):
+def json_to_rules(json_file):
     json_rules = json_file["rules"]
     jr = list(json_rules.values())
     rules = []
@@ -42,10 +46,10 @@ def JsonToRules(json_file):
         rules.append(Rule(r["THEN"]["result"], conditions, r["THEN"]["type_result"], r["THEN"]["result"]))
     return rules
 
-def Reason(json_file, facts):
+def reason(json_file, facts):
     but = json_file['but']
-    is_static = False
-    rules = JsonToRules(json_file)
+    is_static = False;
+    rules = json_to_rules(json_file)
     results = []
     
     while(is_static == False):
@@ -68,7 +72,7 @@ def Reason(json_file, facts):
             is_static = True
     return results
 
-def GetResults(results):
+def get_results(results):
     FinalResult = []
     for i in range(len(results)):
         jsonobject = {}
@@ -77,20 +81,20 @@ def GetResults(results):
     return FinalResult
 
 
-def GetFacts(json_file):
+def get_facts(json_file):
     return [json_file["facts"]]
 
-def GetRules(json_file):
-    rules = JsonToRules(json_file)
-    RulesObject = {}
+def get_rules(json_file):
+    rules = json_to_rules(json_file)
+    rules_object = {}
     i = 1
     for rule in rules:
-        RuleObject = {}
+        rule_object = {}
         for j in range(len(rule.conditions)):
             condition = rule.conditions[j].operator_type + " " + rule.conditions[j].operation + " " + rule.conditions[j].operation_value
             name = "condition f" if ((j+1) == len(rule.conditions)) else"condition "+ str(j+1)
-            RuleObject[name] = condition
-        RuleObject["result"] = rule.result
-        RulesObject["Rule " + str(i)] = RuleObject
+            rule_object[name] = condition
+        rule_object["result"] = rule.result
+        rules_object["Rule " + str(i)] = rule_object
         i += 1
-    return RulesObject
+    return rules_object
