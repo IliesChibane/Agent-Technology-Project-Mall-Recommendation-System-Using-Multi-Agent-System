@@ -60,7 +60,7 @@
     </v-row>
 
     <v-row class="mt-5">
-        <v-col cols="4">
+        <v-col cols="6" style=" display: flex; align-items: center; justify-content: center"  align="center">
             <v-combobox 
                 label="Portable" 
                 dense 
@@ -73,7 +73,7 @@
                 v-model="places.Portable"
             ></v-combobox>
         </v-col>
-
+    </v-row>
     <v-row class="text-center">
         <v-col>
             <v-btn
@@ -91,7 +91,7 @@
         <v-col v-if="results.length > 0">
             <h2>List of places to visit</h2>
                 <div v-for="r in results" :key="r"> 
-                    <h3>{{r["lieu_a_visiter"]}}</h3>
+                    <h3>{{r["produit_a_acheter"]}}</h3>
                 </div>
         </v-col>
     </v-row>
@@ -113,7 +113,7 @@ export default {
             Portable_items: ["Yes","No","Doesn't matter"],
             places: {
                 Category: "",
-                Localisation: "",
+                Type: "",
                 Size: "",
                 Function: "",
                 Portable: ""
@@ -128,7 +128,7 @@ export default {
                     "http://localhost:5000/api/products",
                     {
                         Category: this.places.Category,
-                        Localisation: this.places.Localisation,
+                        Type: this.places.Type,
                         Size: this.places.Size,
                         Function: this.places.Function,
                         Portable: this.places.Portable,

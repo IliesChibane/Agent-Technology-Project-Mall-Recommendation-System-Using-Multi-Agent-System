@@ -56,7 +56,7 @@
     data: () => ({ 
       drawer: null,
       items: [
-        { text: 'Tourism', icon: 'mdi-bag-suitcase', link: "/" },
+        { text: 'Products', icon: 'mdi-bag-suitcase', link: "/" },
         { text: 'Vehicles', icon: 'mdi-car', link: "/vehicles" },
         { text: 'Facts', icon: 'mdi-file-document', link: "/facts"  },
         { text: 'Rules', icon: 'mdi-library', link: "/rules"  },
