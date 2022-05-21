@@ -8,8 +8,8 @@ import Utility as expert_system
 app = Flask(__name__)
 
 # Opening JSON file
-f1 = open('Bases/Products.json')
-f2 = open('Bases/Vehicles.json')
+f1 = open('../Bases/Products.json')
+f2 = open('../Bases/Vehicles.json')
 
 products = json.load(f1)
 vehicles = json.load(f2)
@@ -28,7 +28,7 @@ def productsAgent():
     facts["Function"] = request.json["Function"]
     facts["Portable"] = request.json["Portable"]
     results = expert_system.reason(products,facts)
-    return jsonify(expert_system.GetResults(results))
+    return jsonify(expert_system.get_results(results))
 
 # Getting a place to visit
 @app.route('/api/vehicles', methods=['POST'])
@@ -41,7 +41,7 @@ def VehicleAgent():
     facts["Number_of_wheels"] = request.json["Number_of_wheels"]
     facts["Number_of_doors"] = request.json["Number_of_doors"]
     results = expert_system.reason(vehicles,facts)
-    return jsonify(expert_system.GetResults(results))
+    return jsonify(expert_system.get_results(results))
 
 #Getting the facts 
 @app.route('/api/VehiclesFacts', methods=['GET'])

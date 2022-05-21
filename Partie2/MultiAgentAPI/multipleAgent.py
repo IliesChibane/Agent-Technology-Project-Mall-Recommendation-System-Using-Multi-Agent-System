@@ -27,7 +27,7 @@ class Main_Agents(Agent):
                         for agent in agents:
                             msg = Message(to=agent)
                             msg.set_metadata("performative", "inform")  # Set the "inform" FIPA performative
-                            msg.body = "Bases/formulaire.json"
+                            msg.body = "../Bases/formulaire.json"
                             await self.send(msg)
                         time.sleep(0.5)
                         self.set_next_state("waiting")
@@ -52,7 +52,7 @@ class Main_Agents(Agent):
                 self.add_behaviour(fsm)
         def send_form(self, facts):
                 form = agent.dumps(facts, indent = 7)
-                with open("Bases/formulaire.json", "w") as outfile:
+                with open("../Bases/formulaire.json", "w") as outfile:
                         outfile.write(form)
         def send_bought_product_quantuty(self, file, name, quantity):
                 infos = {}
@@ -60,15 +60,15 @@ class Main_Agents(Agent):
                 infos["name"] = name
                 infos["quantity"] = quantity
                 form = agent.dumps(infos, indent = 3)
-                with open("Bases/UpdateInfo.json", "w") as outfile:
+                with open("../Bases/UpdateInfo.json", "w") as outfile:
                         outfile.write(form)
         def send_result_to_user(self):
                 result = {}
-                ag1 = open('Bases/result1.json')
+                ag1 = open('../Bases/result1.json')
                 products1 = agent.load(ag1)
-                ag2 = open('Bases/result2.json')
+                ag2 = open('../Bases/result2.json')
                 products2 = agent.load(ag2)
-                ag3 = open('Bases/result3.json')
+                ag3 = open('../Bases/result3.json')
                 products3 = agent.load(ag3)
                 if (products1 != []):
                         result["magasin1"] = products1
@@ -122,5 +122,5 @@ class Auxilary_Agents(Agent):
                 global obtained_products
                 obtained_products = agent_result
         def update_product(self):
-                infos = agent.load(open("Bases/UpdateInfo.json"))
+                infos = agent.load(open("../Bases/UpdateInfo.json"))
                 expert_system.update_quantity(infos["file"], infos["name"], infos["quantity"])

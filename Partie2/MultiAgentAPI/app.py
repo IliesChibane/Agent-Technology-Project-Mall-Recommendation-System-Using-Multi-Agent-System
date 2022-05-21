@@ -16,7 +16,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 def multi_agent_system():
     facts = {}
     facts["Type"] = request.json["Type"]
-    facts["Quantite"] = request.json["Quantite"]
+    facts["Quantity"] = request.json["Quantity"]
     facts["Prix"] = request.json["Prix"]
     facts["Couleur"] = request.json["Couleur"]
     facts["Promotion"] = request.json["Promotion"]
@@ -38,9 +38,9 @@ def multi_agent_system():
     main_agent.send_form(facts)
     main_agent.start()
 
-    magasin1.search_product("Bases/formulaire.json",agent.load(open("Bases/Agent1Products.json")),"Bases/result1.json")
-    magasin2.search_product("Bases/formulaire.json",agent.load(open("Bases/Agent2Products.json")),"Bases/result2.json")
-    magasin3.search_product("Bases/formulaire.json",agent.load(open("Bases/Agent3Products.json")),"Bases/result3.json")
+    magasin1.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent1Products.json")),"../Bases/result1.json")
+    magasin2.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent2Products.json")),"../Bases/result2.json")
+    magasin3.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent3Products.json")),"../Bases/result3.json")
 
     while magasin1.is_alive() or magasin2.is_alive() or magasin3.is_alive():
         try:
@@ -58,31 +58,74 @@ def multi_agent_system():
 @app.route('/api/au', methods=['POST'])
 @cross_origin(origin='*',headers=['content-type'])
 def agent_update():
-    file = request.json["File"]
-    name = request.json["Name"]
-    quantity = request.json["Quantity"]
+    file_name = request.json["NameFile"]
+    name = request.json["NameProduct"]
+    quantity = request.json["NewQuantity"]
     main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
-    main_agent.send_bought_product_quantuty(file, name, quantity)
+    main_agent.send_bought_product_quantuty(file_name, name, quantity)
     magasin = None
-    if(file == "Bases\Agent1Products.json"):
+    if(file_name == "../Bases/Agent1Products.json"):
         magasin = ma.Auxilary_Agents("AgentAnnexe1@ubuntu-jabber.de", "ilies")
-    elif(file == "Bases\Agent2Products.json"):
+    elif(file_name == "../Bases/Agent2Products.json"):
         magasin = ma.Auxilary_Agents("AgentAnnexe2@ubuntu-jabber.de", "ilies")
-    elif(file == "Bases\Agent3Products.json"):
+    elif(file_name == "../Bases/Agent3Products.json"):
         magasin = ma.Auxilary_Agents("AgentAnnexe3@ubuntu-jabber.de", "ilies")
     magasin.update_product()
+    return True
 
 @app.route('/api/productsMagasin1', methods=['GET'])
 @cross_origin(origin='*',headers=['content-type'])
-def FetchFactsproducts():
-    return jsonify(expert_system.get_rules(agent.load(open("Bases/Agent1Products.json"))))
+def FetchShop1products():
+    expert_system.clean_results()
+    facts = {}
+    facts["Type"] = "Doesn't matter"
+    facts["Quantity"] = "Doesn't matter"
+    facts["Prix"] = "Doesn't matter"
+    facts["Couleur"] = "Doesn't matter"
+    facts["Promotion"] = "Doesn't matter"
+    facts["Marque"] = "Doesn't matter"
+    facts["Etat"] = "Doesn't matter"
+    main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
+    main_agent.send_form(facts)
+    magasin1 = ma.Auxilary_Agents("AgentAnnexe1@ubuntu-jabber.de", "ilies")
+    magasin1.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent1Products.json")),"../Bases/result1.json")
+    product_names = main_agent.send_result_to_user()
+    return expert_system.detail_product(product_names)
 
 @app.route('/api/productsMagasin2', methods=['GET'])
 @cross_origin(origin='*',headers=['content-type'])
-def FetchFactsproducts():
-    return jsonify(expert_system.get_rules(agent.load(open("Bases/Agent2Products.json"))))
+def FetchShop2products():
+    expert_system.clean_results()
+    facts = {}
+    facts["Type"] = "Doesn't matter"
+    facts["Quantity"] = "Doesn't matter"
+    facts["Prix"] = "Doesn't matter"
+    facts["Couleur"] = "Doesn't matter"
+    facts["Promotion"] = "Doesn't matter"
+    facts["Marque"] = "Doesn't matter"
+    facts["Etat"] = "Doesn't matter"
+    main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
+    main_agent.send_form(facts)
+    magasin2 = ma.Auxilary_Agents("AgentAnnexe2@ubuntu-jabber.de", "ilies")
+    magasin2.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent2Products.json")),"../Bases/result2.json")
+    product_names = main_agent.send_result_to_user()
+    return expert_system.detail_product(product_names)
 
 @app.route('/api/productsMagasin3', methods=['GET'])
 @cross_origin(origin='*',headers=['content-type'])
-def FetchFactsproducts():
-    return jsonify(expert_system.get_rules(agent.load(open("Bases/Agent3Products.json"))))
+def FetchShop3products():
+    expert_system.clean_results()
+    facts = {}
+    facts["Type"] = "Doesn't matter"
+    facts["Quantity"] = "Doesn't matter"
+    facts["Prix"] = "Doesn't matter"
+    facts["Couleur"] = "Doesn't matter"
+    facts["Promotion"] = "Doesn't matter"
+    facts["Marque"] = "Doesn't matter"
+    facts["Etat"] = "Doesn't matter"
+    main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
+    main_agent.send_form(facts)
+    magasin3 = ma.Auxilary_Agents("AgentAnnexe3@ubuntu-jabber.de", "ilies")
+    magasin3.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent3Products.json")),"../Bases/result3.json")
+    product_names = main_agent.send_result_to_user()
+    return expert_system.detail_product(product_names)

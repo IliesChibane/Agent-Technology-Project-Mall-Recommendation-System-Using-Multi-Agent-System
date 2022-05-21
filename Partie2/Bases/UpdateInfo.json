@@ -1,5 +1,5 @@
 {
-   "file": "Bases\\Agent1Products.json",
-   "name": "Iphone 12",
-   "quantity": 2
+   "file": "../Bases/Agent1Products.json",
+   "name": "Alienware Aurora",
+   "quantity": "2"
 }

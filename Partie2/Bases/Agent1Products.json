@@ -53,7 +53,7 @@
      "Etat": 
      [
          "New",
-     "Usagy"
+         "Usagy"
      ]
     },
  "rules": 
@@ -230,8 +230,8 @@
      
      {
          "type_operator": "Quantity",
-     "operation": "<=",
-     "value_operator": "10"
+        "operation": "<=",
+        "value_operator": "10"
     },
      
      {
