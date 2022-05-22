@@ -141,7 +141,7 @@
                 "result": "JBL Wireless Microphone"
             }
         },
-        "Tv LG": {
+        "TV LG": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -222,7 +222,7 @@
             ],
             "THEN": {
                 "type_result": "product",
-                "result": "Alienware Aurora"
+                "result": "TV Screen LG"
             }
         },
         "Delta X": {
