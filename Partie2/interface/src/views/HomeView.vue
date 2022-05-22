@@ -133,7 +133,7 @@
                                 outlined
                                 rounded
                                 small
-                                @click="updateData"
+                                @click="updateData(key1,key2)"
                             >Buy</v-btn>
                             </v-card-actions>
                         </v-card>
@@ -167,8 +167,8 @@ export default {
             rules: [(value) => !!value || "This field is required"],
             results:[],
             Type_items: ["Laptop","desktop computer","Smartphone","Tablet","Headphones","Microphone","Afficheur","Semiconducteur","TV Screen","TV","Oculus","SSD","RAM","Doesn't matter"],
-            Quantity_items: ["1","2","3","4","5","6","7","8","9","10","12","15","20","30","Doesn't matter"],
-            Prix_items: ["15000","2000","3500","200000","Doesn't matter"],
+            Quantity_items: ["1","2","3","4","5","6","7","8","9","10","12","15","20","30"],
+            Prix_items: ["2000","3500","15000","200000","Doesn't matter"],
             Couleur_items: ["Pink","Grey","Green","Black","Blue","Doesn't matter"],
             Promotion_items: ["5%","10%","15%","20%","Doesn't matter"],
             Marque_items: ["Samsung","Apple","Dell","Condor","Hp","Sony","LG","Doesn't matter"],
@@ -206,13 +206,23 @@ export default {
                 console.log(error);
             }
         },
-        async updateData() {
+        async updateData(nf, np) {
+            console.log(nf)
+            console.log(np)
+            var link
+            if(nf == "magasin1")
+                link = "../Bases/Agent1Products.json"
+            else if (nf == "magasin2")
+                link = "../Bases/Agent2Products.json"
+            else if (nf == "magasin3")
+                link = "../Bases/Agent3Products.json"
+
             try {
                 const response = await axios.post(
                     "http://localhost:5000/api/au",
                     {
-                        NameFile: "../Bases/Agent1Products.json",
-                        NameProduct: "Alienware Aurora",
+                        NameFile: link,
+                        NameProduct: np,
                         NewQuantity: this.product.Quantity,
                     }
                 );
