@@ -14,6 +14,7 @@ app.config['CORS_HEADERS'] = 'Content-Type'
 @app.route('/api/mas', methods=['POST'])
 @cross_origin(origin='*',headers=['content-type'])
 def multi_agent_system():
+    expert_system.clean_results()
     facts = {}
     facts["Type"] = request.json["Type"]
     facts["Quantity"] = request.json["Quantity"]
