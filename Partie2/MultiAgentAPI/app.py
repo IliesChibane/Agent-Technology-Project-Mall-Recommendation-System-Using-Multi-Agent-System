@@ -72,7 +72,7 @@ def agent_update():
     elif(file_name == "../Bases/Agent3Products.json"):
         magasin = ma.Auxilary_Agents("AgentAnnexe3@ubuntu-jabber.de", "ilies")
     magasin.update_product()
-    return True
+    return jsonify("Done")
 
 @app.route('/api/productsMagasin1', methods=['GET'])
 @cross_origin(origin='*',headers=['content-type'])

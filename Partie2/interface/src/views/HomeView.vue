@@ -117,11 +117,11 @@
     <v-row>
         <v-col col = 6 v-if="Object.keys(results).length != 0">
             <h2 style="text-align: center">List of product to buy</h2>
-                <div v-for="(value1, key1) in results" :key="key1"> 
+                <v-container grid-list-md v-for="(value1, key1) in results" :key="key1"> 
                         <h3 style="text-align: center">
                             {{key1}} : 
                          </h3>
-                        <v-card v-for="(value2, key2) in value1" :key="key2">
+                        <v-card class="mb-5" v-for="(value2, key2) in value1" :key="key2">
                             <v-card-title>{{key2}}</v-card-title>
                             <v-card-text v-for="(value3, key3) in value2" :key="key3">
                                 {{key3}} : {{value3}}
@@ -137,22 +137,12 @@
                             >Buy</v-btn>
                             </v-card-actions>
                         </v-card>
-                        <br>
-                </div>
+                </v-container>
         </v-col>
 
         <v-col col = 6 v-if="Object.keys(results).length != 0">
             <h2>agents communication history</h2>
-                Main agent sent "../Bases/formulaire.json" <br>
-                To : Agent 1, Agent 2, Agent 3 <br>
-                Agent 1 received the message !!! <br>
-                Agent 2 received the message !!! <br>
-                Agent 3 received the message !!! <br>
-                Agent 1 sent "../Bases/result1.json" <br>
-                Agent 2 sent "../Bases/result2.json" <br>
-                Agent 3 sent "../Bases/result3.json" <br>
-                Main agent received all the messages !!! <br>
-                Main agent send the result to the user as json object <br>
+                {{historic}}
         </v-col>
     </v-row>
 </v-container>
@@ -166,6 +156,7 @@ export default {
         return {
             rules: [(value) => !!value || "This field is required"],
             results:[],
+            historic: "",
             Type_items: ["Laptop","desktop computer","Smartphone","Tablet","Headphones","Microphone","Afficheur","Semiconducteur","TV Screen","TV","Oculus","SSD","RAM","Doesn't matter"],
             Quantity_items: ["1","2","3","4","5","6","7","8","9","10","12","15","20","30"],
             Prix_items: ["2000","3500","15000","200000","Doesn't matter"],
@@ -201,8 +192,8 @@ export default {
                     }
                 );
                 this.results = response.data;
-                console.log(Object.keys(this.results).length);
-            } catch (error) {
+                this.historic = "Main agent sent '../Bases/formulaire.json'|| To : Agent 1, Agent 2, Agent 3|| Agent 1 received the message !!!|| Agent 2 received the message !!!|| Agent 3 received the message !!!|| Agent 1 sent '../Bases/result1.json'|| Agent 2 sent '../Bases/result2.json'|| Agent 3 sent '../Bases/result3.json' || Main agent received all the messages !!!        Main agent send the result to the user as json object"
+           } catch (error) {
                 console.log(error);
             }
         },
@@ -226,6 +217,8 @@ export default {
                         NewQuantity: this.product.Quantity,
                     }
                 );
+                var number = nf[nf.lenght - 1]
+                this.historic = "Main agent sent '../Bases/UpdateInfo.json' à l'agent "+number+"|| Agent "+number+" received the message !!!|| Agent "+number+" sent 'Done' to main agent !!!"
             } catch (error) {
                 console.log(error);
             }

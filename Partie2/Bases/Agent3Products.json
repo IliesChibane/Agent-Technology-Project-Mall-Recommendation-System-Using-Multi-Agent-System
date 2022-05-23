@@ -70,7 +70,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "20000"
                 },
                 {
@@ -112,7 +112,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "20000"
                 },
                 {
@@ -154,7 +154,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "15000"
                 },
                 {
@@ -196,7 +196,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "5000000"
                 },
                 {
@@ -238,7 +238,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "2000"
                 },
                 {
@@ -280,7 +280,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "1500"
                 },
                 {
@@ -322,7 +322,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "150000"
                 },
                 {
@@ -364,7 +364,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "10000"
                 },
                 {
@@ -406,7 +406,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "150000"
                 },
                 {

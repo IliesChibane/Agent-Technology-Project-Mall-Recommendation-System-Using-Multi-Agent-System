@@ -1,19 +1,17 @@
 <template>
 <v-container>
     <v-card-title class="justify-center"><u> Agent1 Products </u></v-card-title>
-     <v-row class="mt-5">
+     <v-row>
             <v-col cols="6">
-             <div v-for="(value1, key1) in products" :key="key1"> 
-                        <h3 style="text-align: center">
-                         </h3>
-                        <v-card v-for="(value2, key2) in value1" :key="key2">
+             <v-container v-for="(value1, key1) in products" :key="key1"> 
+                        <v-card class="mb-10" v-for="(value2, key2) in value1" :key="key2">
                             <v-card-title>{{key2}}</v-card-title>
                             <v-card-text v-for="(value3, key3) in value2" :key="key3">
                                 {{key3}} : {{value3}}
                             </v-card-text>
                         </v-card>
                         <br>
-                </div>
+                </v-container>
             </v-col>
      </v-row>         
     </v-container>
