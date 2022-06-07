@@ -70,7 +70,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "20000"
                 },
                 {
@@ -96,7 +96,7 @@
             ],
             "THEN": {
                 "type_result": "product",
-                "result": "Iphone 12"
+                "result": "JBL 151"
             }
         },
         "JBL Wireless Microphone": {
@@ -112,7 +112,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "20000"
                 },
                 {
@@ -141,7 +141,7 @@
                 "result": "JBL Wireless Microphone"
             }
         },
-        "Tv LG": {
+        "TV LG": {
             "AND": [{
                     "type_operator": "Type",
                     "operation": "==",
@@ -154,7 +154,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "15000"
                 },
                 {
@@ -196,7 +196,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "5000000"
                 },
                 {
@@ -222,7 +222,7 @@
             ],
             "THEN": {
                 "type_result": "product",
-                "result": "Alienware Aurora"
+                "result": "TV Screen LG"
             }
         },
         "Delta X": {
@@ -238,7 +238,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "2000"
                 },
                 {
@@ -280,7 +280,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "1500"
                 },
                 {
@@ -322,7 +322,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "150000"
                 },
                 {
@@ -364,7 +364,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "10000"
                 },
                 {
@@ -406,7 +406,7 @@
                 },
                 {
                     "type_operator": "Prix",
-                    "operation": "==",
+                    "operation": "<=",
                     "value_operator": "150000"
                 },
                 {

@@ -57,9 +57,9 @@
       drawer: null,
       items: [
         { text: 'Products', icon: 'mdi-devices', link: "/" },
-        { text: 'Vehicles', icon: 'mdi-car', link: "/vehicles" },
-        { text: 'Facts', icon: 'mdi-file-document', link: "/facts"  },
-        { text: 'Rules', icon: 'mdi-library', link: "/rules"  },
+        { text: 'Agent1 Products', icon: 'mdi-robot', link: "/agent1" },
+        { text: 'Agent2 Products', icon: 'mdi-robot', link: "/agent2"  },
+        { text: 'Agent3 Products', icon: 'mdi-robot', link: "/agent3"  },
         { text: 'About', icon: 'mdi-badge-account', link: "/about" },
         ], 
       }),

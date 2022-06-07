@@ -89,7 +89,7 @@
 
     <v-row class="text-center">
         <v-col v-if="results.length > 0">
-            <h2>List of places to visit</h2>
+            <h2>List of products</h2>
                 <div v-for="r in results" :key="r"> 
                     <h3>{{r["produit_a_acheter"]}}</h3>
                 </div>

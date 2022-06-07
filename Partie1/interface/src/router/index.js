@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import HomeView from '../views/Tourism.vue'
+import HomeView from '../views/Products.vue'
 import Vehicles from '../views/Vehicles.vue'
 import Rules from '../views/Rules.vue'
 import Facts from '../views/Facts.vue'

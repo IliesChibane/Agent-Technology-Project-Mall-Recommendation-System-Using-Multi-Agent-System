@@ -10,13 +10,13 @@ class Condition:
             elif(self.operation == "!="):
                 return fact != self.operation_value
             elif(self.operation == "<"):
-                return fact < self.operation_value
+                return int(fact) < int(self.operation_value)
             elif(self.operation == ">"):
-                return fact > self.operation_value
+                return int(fact) > int(self.operation_value)
             elif(self.operation == "<="):
-                return fact <= self.operation_value
+                return int(fact) <= int(self.operation_value)
             elif(self.operation == ">="):
-                return fact >= self.operation_value
+                return int(fact) >= int(self.operation_value)
             elif(self.operation == "%"):
                 return fact in self.operation_value
             else:
@@ -102,11 +102,11 @@ def get_rules(json_file):
 def select_shop(key):
     import json as agent
     if(key == "magasin1"):
-        return agent.load(open("Bases/Agent1Products.json"))
+        return agent.load(open("../Bases/Agent1Products.json"))
     elif(key == "magasin2"):
-        return agent.load(open("Bases/Agent2Products.json"))
+        return agent.load(open("../Bases/Agent2Products.json"))
     elif(key == "magasin3"):
-        return agent.load(open("Bases/Agent3Products.json"))
+        return agent.load(open("../Bases/Agent3Products.json"))
     else:
         return {}
 
@@ -130,9 +130,16 @@ def update_quantity(file, name, q):
     products = agent.load(open(file))
     for r in products["rules"][name]["AND"]:
         if r["type_operator"] == "Quantity" :
-            r["value_operator"] = str(int(r["value_operator"]) - q)
+            r["value_operator"] = str(int(r["value_operator"]) - int(q))
             break
     form = agent.dumps(products)
     with open(file, "w") as outfile:
         outfile.write(form)
 
+def clean_results():
+    import json as agent
+    form = agent.dumps({})
+    files = ["../Bases/result1.json","../Bases/result2.json","../Bases/result3.json"]
+    for file in files:
+        with open(file, "w") as outfile:
+            outfile.write(form)

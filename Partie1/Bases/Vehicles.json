@@ -112,6 +112,11 @@
                 "type_operator": "Number_of_doors",
                 "operation": "==",
                 "value_operator": "2"
+             },
+             {
+                "type_operator": "Number_of_wheels",
+                "operation": "==",
+                "value_operator": "4"
              }
           ],
           "THEN": {
