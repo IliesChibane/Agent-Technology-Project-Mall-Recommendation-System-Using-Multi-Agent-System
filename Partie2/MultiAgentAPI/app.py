@@ -63,7 +63,6 @@ def agent_update():
     file_name = request.json["NameFile"]
     name = request.json["NameProduct"]
     quantity = request.json["NewQuantity"]
-
     main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
     main_agent.send_bought_product_quantuty(file_name, name, quantity)
     magasin = None
@@ -90,7 +89,6 @@ def FetchShop1products():
     facts["Etat"] = "Doesn't matter"
     main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
     main_agent.send_form(facts)
-
     magasin1 = ma.Auxilary_Agents("AgentAnnexe1@ubuntu-jabber.de", "ilies")
     magasin1.search_product("../Bases/formulaire.json",agent.load(open("../Bases/Agent1Products.json")),"../Bases/result1.json")
     product_names = main_agent.send_result_to_user()
@@ -108,7 +106,6 @@ def FetchShop2products():
     facts["Promotion"] = "Doesn't matter"
     facts["Marque"] = "Doesn't matter"
     facts["Etat"] = "Doesn't matter"
-
     main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
     main_agent.send_form(facts)
     magasin2 = ma.Auxilary_Agents("AgentAnnexe2@ubuntu-jabber.de", "ilies")
@@ -128,7 +125,6 @@ def FetchShop3products():
     facts["Promotion"] = "Doesn't matter"
     facts["Marque"] = "Doesn't matter"
     facts["Etat"] = "Doesn't matter"
-
     main_agent = ma.Main_Agents("AgentPrincipal@ubuntu-jabber.de", "ilies")
     main_agent.send_form(facts)
     magasin3 = ma.Auxilary_Agents("AgentAnnexe3@ubuntu-jabber.de", "ilies")

@@ -64,7 +64,6 @@ class Main_Agents(Agent):
                         outfile.write(form)
         def send_result_to_user(self):
                 result = {}
-                print("teste")
                 ag1 = open('../Bases/result1.json')
                 products1 = agent.load(ag1)
                 ag2 = open('../Bases/result2.json')
@@ -77,7 +76,6 @@ class Main_Agents(Agent):
                         result["magasin2"] = products2
                 if (products3 != []):
                         result["magasin3"] = products3
-                print("will send")
                 return result
 
 
